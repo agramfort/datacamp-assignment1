@@ -42,6 +42,14 @@ def max_index(X):
 
     # TODO
 
+    if  type(X).__module__ != np.__name__:
+
+        raise ValueError
+
+    if X.ndim != 2:
+
+        raise ValueError
+
     ncol = X.shape[1]
     idx = np.argmax(X)
     
@@ -69,14 +77,9 @@ def wallis_product(n_terms):
         The approximation of order `n_terms` of pi using the Wallis product.
     """
 
-    list_n = np.arange(1,n_terms+1)
+    list_n = np.arange(1,n_terms+1, dtype=np.int64)
     list_2n = 2*list_n
 
     wallis = np.prod((list_2n)**2/((list_2n-1)*(list_2n+1)))
 
     return 2*wallis
-
-X = np.array([[0, 1], [2, 0]])
-print(type(X))
-
-
