@@ -16,7 +16,7 @@ def test_max_index():
 
     X = np.random.randn(100, 100)
     i, j = max_index(X)
-    assert np.all(X[i, j] <= X)
+    assert np.all(X[i, j] >= X)
 
     with pytest.raises(ValueError):
         max_index(None)
@@ -29,5 +29,11 @@ def test_max_index():
 
 
 def test_wallis_product():
+    pi_approx = wallis_product(0)
+    assert pi_approx == 2.
+
+    pi_approx = wallis_product(1)
+    assert pi_approx == 8 / 3
+
     pi_approx = wallis_product(100000)
     assert abs(pi_approx - m.pi) < 1e-4
