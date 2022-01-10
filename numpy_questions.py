@@ -77,4 +77,5 @@ def wallis_product(n_terms):
         pi *= float(4 * i ** 2)/float(4 * i ** 2 - 1)
     pi *= 2
     
-    return 0.
+    return pi
+    
