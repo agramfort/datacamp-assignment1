@@ -38,6 +38,9 @@ def max_index(X):
     if not isinstance(X, np.ndarray) or len(X.shape) != 2:
         raise ValueError('Please the input must be an array in 2D')
 
+    i = 0
+    j = 0
+      
     max_array = X[i, j]
     ind = 0
 
