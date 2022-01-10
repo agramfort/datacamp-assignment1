@@ -38,9 +38,6 @@ def max_index(X):
     if not isinstance(X, np.ndarray) or len(X.shape) != 2:
         raise ValueError('Please the input must be an array in 2D')
 
-    i = 0
-    j = 0
-
     max_array = X[i, j]
     ind = 0
 
@@ -74,7 +71,6 @@ def wallis_product(n_terms):
 
     wallis_term = 4/3
     for i in range(2, n_terms + 1):
-
         u = 2*i / (2*i - 1)
         v = 2*i / (2*i + 1)
         wallis_term *= u * v
